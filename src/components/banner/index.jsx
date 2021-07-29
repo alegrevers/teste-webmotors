@@ -37,7 +37,6 @@ class Banner extends React.Component {
       makes = data.map((make) => {
         return make
       })
-      console.log(makes)
       this.setState({makesOptions: makes})
     })
   }
@@ -50,22 +49,18 @@ class Banner extends React.Component {
       models = data.map((model) => {
         return model
       })
-      console.log(models)
       this.setState({modelsOptions: models})
     })
   }
 
   getVersions(URL) {
-    console.log(versionURL + URL.target.value)
     let versions = []
     fetch(versionURL + URL.target.value).then(res => {
       return res.json()
     }).then(data => {
-      console.log(data)
       versions = data.map((version) => {
         return version
       })
-      console.log(versions)
       this.setState({versionsOptions: versions})
     })
   }
